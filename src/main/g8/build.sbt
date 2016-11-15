@@ -16,6 +16,8 @@ lazy val root = (project in file(".")).
        "com.twitter" %% "inject-app" % "$finatra$",       
        "org.freemarker" % "freemarker" % ver("freemarker"),
        "ch.qos.logback" % "logback-classic" % ver("logback"),
+       "org.jdbi" % "jdbi" % $("jdbi"),
+       "com.h2database" % "h2" % $("h2"),
        "com.twitter" %% "finatra-http" % "$finatra$" % "test" classifier "tests",
        "com.twitter" %% "inject-server" % "$finatra$" % "test" classifier "tests",
        "com.twitter" %% "inject-app" % "$finatra$" % "test" classifier "tests",

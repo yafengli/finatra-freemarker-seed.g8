@@ -14,6 +14,8 @@ class HelloServer extends HttpServer {
 
   override def defaultFinatraHttpPort = ":80"
 
+  override protected def modules: Seq[Module] = Array(FreemarkerModule, H2Module)
+
   override def configureHttp(router: HttpRouter): Unit = {
     router
       .filter[LoggingMDCFilter[Request, Response]]

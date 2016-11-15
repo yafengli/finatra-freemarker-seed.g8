@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.{Inject, Singleton}
 
 import com.example.filter.{AddCookieFilter, SecureFilter}
+import com.example.freemarker.Freemarker
 import com.example.service.ExampleService
 import com.twitter.finagle.http.{Cookie, Request}
 import com.twitter.finatra.http.Controller
@@ -18,10 +19,7 @@ class PingController @Inject() (service: ExampleService) extends Controller {
     "pong" + System.currentTimeMillis()
   }
 
-  get("/name") { request: Request =>
-    request.headerMap.foreach { t =>
-      println(s"${t._1}:${t._2}")
-    }
+  get("/name") { request: Request =>    
     service.myDo(request)
     response.ok.plain("Bob")
   }
@@ -44,6 +42,10 @@ class PingController @Inject() (service: ExampleService) extends Controller {
     buffer.append(request.cookies.map { t => s"${t._1}:${t._2.value}" }.mkString("<br/>"))
     buffer.append(request.response.cookies.map { t => s"${t._1}:${t._2.value}" }.mkString("<br/>"))
 
-    response.ok.html(buffer.toString)
+    //response.ok.html(buffer.toString)
+    DemoView(buffer.toString)
   }
 }
+
+@Freemarker("demo")
+case class DemoView(name: String)
