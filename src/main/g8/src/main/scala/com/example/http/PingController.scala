@@ -26,7 +26,7 @@ class PingController @Inject() (service: ExampleService) extends Controller {
 
   get("/cookie") { request: Request =>
     val format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-    println(s"Come in /cookie:${format.format(new Date())}")
+    println("Come in /cookie:"+format.format(new Date()))
     val c1 = new Cookie("SESSION_ID", System.currentTimeMillis().toString)
     c1.maxAge = util.Duration.apply(500, TimeUnit.SECONDS)
     val c2 = new Cookie("OPEN_ID", System.currentTimeMillis().toString)
@@ -38,9 +38,9 @@ class PingController @Inject() (service: ExampleService) extends Controller {
 
   filter[AddCookieFilter].get("/trace") { request: Request =>
     val buffer = new StringBuffer()
-    buffer.append(request.params.map { t => s"${t._1}:${t._2}" }.mkString("<br/>"))
-    buffer.append(request.cookies.map { t => s"${t._1}:${t._2.value}" }.mkString("<br/>"))
-    buffer.append(request.response.cookies.map { t => s"${t._1}:${t._2.value}" }.mkString("<br/>"))
+    buffer.append(request.params.map { t => t._1+":"+t._2 }.mkString("<br/>"))
+    buffer.append(request.cookies.map { t => t._1+":"+t._2.value }.mkString("<br/>"))
+    buffer.append(request.response.cookies.map { t => t._1+":"+t._2.value }.mkString("<br/>"))
 
     //response.ok.html(buffer.toString)
     DemoView(buffer.toString)
