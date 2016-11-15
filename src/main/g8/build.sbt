@@ -14,14 +14,14 @@ lazy val root = (project in file(".")).
        "com.twitter" %% "finatra-thrift" % $finatra$,
        "com.twitter" %% "inject-server" % $finatra$,
        "com.twitter" %% "inject-app" % $finatra$,       
-       "org.freemarker" % "freemarker" % #("freemarker"),
-       "ch.qos.logback" % "logback-classic" % #("logback"),
+       "org.freemarker" % "freemarker" % ver("freemarker"),
+       "ch.qos.logback" % "logback-classic" % ver("logback"),
        "com.twitter" %% "finatra-http" % $finatra$ % "test" classifier "tests",
        "com.twitter" %% "inject-server" % $finatra$ % "test" classifier "tests",
        "com.twitter" %% "inject-app" % $finatra$ % "test" classifier "tests",
        "com.twitter" %% "inject-core" % $finatra$ % "test" classifier "tests",
        "com.twitter" %% "inject-modules" % $finatra$ % "test" classifier "tests",
-       "org.mockito" % "mockito-core" % #("mockito") % "test",
+       "org.mockito" % "mockito-core" % ver("mockito") % "test",
        "org.specs2" %% "specs2" % #("specs2") % "test",
-       "org.scalatest" %% "scalatest" % #("scalatest") % "test")
+       "org.scalatest" %% "scalatest" % ver("scalatest") % "test")
   )
