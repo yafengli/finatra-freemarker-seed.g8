@@ -20,8 +20,8 @@ lazy val root = (project in file(".")).enablePlugins(JavaAppPackaging).
       organization := "com.example",
       scalaVersion := "2.11.8"
     )),
-    name := "Hello",
-    mainClass := Some("com.example.ExampleServerMain"),
+    name := "hello",
+    mainClass := Some("com.example.HelloServerMain"),
     libraryDependencies ++= Seq(
        "com.twitter" %% "finatra-http" % "$finatra$",
        "com.twitter" %% "finatra-httpclient" % "$finatra$",
