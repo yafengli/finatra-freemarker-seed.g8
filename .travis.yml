@@ -1,0 +1,11 @@
+language: scala
+scala:
+   - 2.11.7
+jdk:
+   - oraclejdk8
+addons:
+  postgresql: "9.3"
+services:
+  - postgresql
+before_script:
+  - psql -U postgres -c 'create database testdb;'
