@@ -22,6 +22,6 @@ lazy val root = (project in file(".")).
        "com.twitter" %% "inject-core" % $finatra$ % "test" classifier "tests",
        "com.twitter" %% "inject-modules" % $finatra$ % "test" classifier "tests",
        "org.mockito" % "mockito-core" % ver("mockito") % "test",
-       "org.specs2" %% "specs2" % #("specs2") % "test",
+       "org.specs2" %% "specs2" % ver("specs2") % "test",
        "org.scalatest" %% "scalatest" % ver("scalatest") % "test")
   )
