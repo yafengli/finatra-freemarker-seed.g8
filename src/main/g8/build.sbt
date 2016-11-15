@@ -1,12 +1,27 @@
 import Build._
 
-lazy val root = (project in file(".")).
+assemblyMergeStrategy in assembly := {
+  case x if x.endsWith("io.netty.versions.properties") => MergeStrategy.first
+  case PathList("javax", "servlet", xs@_*) => MergeStrategy.last
+  case PathList(ps@_*) if ps.last endsWith ".html" => MergeStrategy.first
+  case "application.conf" => MergeStrategy.concat
+  case "unwanted.txt" => MergeStrategy.discard
+  case "BUILD" => MergeStrategy.first
+  case x =>
+    val oldStrategy = (assemblyMergeStrategy in assembly).value
+    oldStrategy(x)
+}
+
+test in assembly := {}
+
+lazy val root = (project in file(".")).enablePlugins(JavaAppPackaging).
   settings(
     inThisBuild(List(
       organization := "com.example",
       scalaVersion := "2.11.8"
     )),
     name := "Hello",
+    mainClass := Some("com.example.ExampleServerMain"),
     libraryDependencies ++= Seq(
        "com.twitter" %% "finatra-http" % "$finatra$",
        "com.twitter" %% "finatra-httpclient" % "$finatra$",
