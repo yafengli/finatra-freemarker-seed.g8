@@ -14,7 +14,7 @@ class AddCookieFilter extends SimpleFilter[Request, Response] {
   }
 
   private def trace(request: Request): Unit = {
-    println(s"#########Query Parameters:${request.params.size}#########")
+    println(s"---------Query Parameters:${request.params.size"---------
     request.params.foreach { t => println(s"${t._1}:${t._2}") }
     println(s"---------Request Cookies:${request.cookies.size}---------")
     request.cookies.foreach { t => println(s"${t._1}:${t._2.value}") }
