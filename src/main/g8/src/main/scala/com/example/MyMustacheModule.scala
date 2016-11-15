@@ -59,13 +59,13 @@ private final class LocalFilesystemDefaultMustacheFactory(
     val filepath = if (resourceName.startsWith("/")) {
       resourceName
     } else if (templatesDirectory.startsWith("/")) {
-      s"$templatesDirectory/$resourceName"
+      templatesDirectory+"/"+resourceName
     } else {
-      s"/$templatesDirectory/$resourceName"
+      templatesDirectory+"/"+resourceName
     }
 
     (resolver.getInputStream(filepath) map { inputStream: InputStream =>
       new InputStreamReader(inputStream)
-    }).getOrElse(throw new FileNotFoundException(s"Unable to find file: $filepath"))
+    }).getOrElse(throw new FileNotFoundException("Unable to find file: "+filepath))
   }
 }
