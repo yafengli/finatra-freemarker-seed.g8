@@ -12,7 +12,7 @@ import finatra.freemarker.{Freemarker, FreemarkerConfigurationFactory}
 @Singleton
 class HomeController @Inject()(service: ExampleService, freemarkerConfigurationFactory: FreemarkerConfigurationFactory) extends Controller {
 
-  get("/demo") { _: Request =>
+  get("/") { _: Request =>
     DemoView("YaFengLi", List(Person("test_1", 1), Person("test_2", 2), Person("test_3", 3)))
   }
 

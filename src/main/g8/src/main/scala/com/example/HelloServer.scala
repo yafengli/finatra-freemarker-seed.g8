@@ -21,5 +21,6 @@ class HelloServer extends HttpServer {
       .filter[TraceIdMDCFilter[Request, Response]]
       .filter[CommonFilters]
       .add[HomeController]
+      .add[PingController]
   }
 }
