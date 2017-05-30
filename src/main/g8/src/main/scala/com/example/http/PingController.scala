@@ -42,10 +42,6 @@ class PingController @Inject() (service: ExampleService) extends Controller {
     buffer.append(request.cookies.map { t => t._1+":"+t._2.value }.mkString("<br/>"))
     buffer.append(request.response.cookies.map { t => t._1+":"+t._2.value }.mkString("<br/>"))
 
-    //response.ok.html(buffer.toString)
-    DemoView(buffer.toString)
+    response.ok.html(buffer.toString)    
   }
 }
-
-@Freemarker("demo")
-case class DemoView(name: String)
