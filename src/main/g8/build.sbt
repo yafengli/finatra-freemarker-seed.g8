@@ -2,10 +2,8 @@ import Build._
 
 lazy val root = (project in file(".")).enablePlugins(JavaAppPackaging).
   settings(
-    inThisBuild(List(
-      organization := "com.example",
-      scalaVersion := $("scala")
-    )),
+    organization := "com.example",
+    scalaVersion := $("scala"),
     name := "hello",
     mainClass := Some("com.example.HelloServerMain"),
     libraryDependencies ++= Seq(
