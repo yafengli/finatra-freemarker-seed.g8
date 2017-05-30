@@ -6,7 +6,6 @@ import java.util.concurrent.TimeUnit
 import javax.inject.{Inject, Singleton}
 
 import com.example.filter.AddCookieFilter
-import com.example.freemarker.Freemarker
 import com.example.service.ExampleService
 import com.twitter.finagle.http.{Cookie, Request}
 import com.twitter.finatra.http.Controller
