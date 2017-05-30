@@ -32,7 +32,7 @@ class HomeController @Inject()(service: ExampleService, freemarkerConfigurationF
               out.flush()
               out.close()
             }
-            response.ok.header("content-disposition",s"""inline; filename="${fn}.txt"""").file(file)
+            response.ok.header("content-disposition","inline; filename='"+fn+".txt'").file(file)
           case None => response.notFound
         }
       case None => response.notFound
