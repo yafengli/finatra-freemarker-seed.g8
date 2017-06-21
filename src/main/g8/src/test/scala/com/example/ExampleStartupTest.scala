@@ -2,14 +2,14 @@ package com.example
 
 import com.google.inject.Stage
 import com.twitter.finatra.http.EmbeddedHttpServer
-import log.rest.ExampleServer
+import com.example._
 import org.scalatest.FunSuite
 
 class ExampleStartupTest extends FunSuite {
 
   lazy val server = new EmbeddedHttpServer(
     stage = Stage.PRODUCTION,
-    twitterServer = new ExampleServer)
+    twitterServer = new HelloServer)
 
   test("Server#startup") {
     try {
