@@ -2,7 +2,6 @@ package com.example
 
 import com.twitter.finagle.http.Status._
 import com.twitter.finatra.http.EmbeddedHttpServer
-import com.example._
 import org.scalatest.FunSuite
 
 class ExampleFeatureTest extends FunSuite {

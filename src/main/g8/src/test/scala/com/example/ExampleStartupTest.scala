@@ -2,7 +2,6 @@ package com.example
 
 import com.google.inject.Stage
 import com.twitter.finatra.http.EmbeddedHttpServer
-import com.example._
 import org.scalatest.FunSuite
 
 class ExampleStartupTest extends FunSuite {
