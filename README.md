@@ -1,3 +1,3 @@
+#### Test local
 
-
-  sbt new yafengli/finatra-freemarker-seed.g8
+      sbt new file://[PROJECT_DIR]/finatra-freemarker-seed.g8
