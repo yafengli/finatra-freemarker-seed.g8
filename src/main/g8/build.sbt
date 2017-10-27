@@ -1,5 +1,7 @@
 import Build._
 
+resolvers +=  "Finatra-Freemarker-Seed Repository" at "https://dl.bintray.com/yafengli/maven/"
+
 lazy val root = (project in file(".")).enablePlugins(JavaAppPackaging).
   settings(
     organization := "com.example",
