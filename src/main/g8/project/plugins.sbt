@@ -1,1 +1,1 @@
-addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.1")
+addSbtPlugin("greatbit" %% "sbt-application-plugin" % "2.0.0")
