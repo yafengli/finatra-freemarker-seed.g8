@@ -2,8 +2,7 @@ import Build._
 
 resolvers +=  "Finatra-Freemarker-Seed Repository" at "https://dl.bintray.com/yafengli/maven/"
 
-lazy val root = (project in file(".")).enablePlugins(SbtDistApp).
-  settings(
+lazy val root = (project in file(".")).settings(
     organization := "com.example",
     scalaVersion := ver("scala"),
     name := "hello",
