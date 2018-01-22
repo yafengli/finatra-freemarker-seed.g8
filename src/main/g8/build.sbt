@@ -14,19 +14,10 @@ lazy val root = (project in file(".")).settings(
       "com.h2database" % "h2" % v("h2"),
 
       "com.twitter" %% "finatra-http" % v("finatra") % "test",
-      "com.twitter" %% "finatra-jackson" % v("finatra") % "test",
-      "com.twitter" %% "inject-server" % v("finatra") % "test",
-      "com.twitter" %% "inject-app" % v("finatra") % "test",
-      "com.twitter" %% "inject-core" % v("finatra") % "test",
-      "com.twitter" %% "inject-modules" % v("finatra") % "test",
-      "com.google.inject.extensions" % "guice-testlib" % v("guice") % "test",
-
+      //"com.twitter" %% "finatra-jackson" % v("finatra") % "test",
+      
       "com.twitter" %% "finatra-http" % v("finatra") % "test" classifier "tests",
-      "com.twitter" %% "finatra-jackson" % v("finatra" % "test" classifier "tests",
-      "com.twitter" %% "inject-server" % v("finatra") % "test" classifier "tests",
-      "com.twitter" %% "inject-app" % v("finatra") % "test" classifier "tests",
-      "com.twitter" %% "inject-core" % v("finatra") % "test" classifier "tests",
-      "com.twitter" %% "inject-modules" % v("finatra") % "test" classifier "tests",
+      //"com.twitter" %% "finatra-jackson" % v("finatra" % "test" classifier "tests",
       
       "org.mockito" % "mockito-core" % v("mockito") % "test",    
       "org.scalatest" %% "scalatest" % v("scalatest") % "test")
