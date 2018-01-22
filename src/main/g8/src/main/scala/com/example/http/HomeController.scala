@@ -7,7 +7,8 @@ import com.example.service.ExampleService
 import com.twitter.finagle.http.Request
 import com.twitter.finatra.http.Controller
 import com.twitter.finatra.http.request.RequestUtils
-import finatra.freemarker.{Freemarker, FreemarkerConfigurationFactory}
+import finatra.freemarker.FreemarkerConfigurationFactory
+import finatra.views.freemarker.Freemarker
 
 @Singleton
 class HomeController @Inject()(service: ExampleService, freemarkerConfigurationFactory: FreemarkerConfigurationFactory) extends Controller {

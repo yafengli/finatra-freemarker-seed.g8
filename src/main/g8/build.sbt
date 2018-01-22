@@ -4,24 +4,30 @@ resolvers +=  "Finatra-Freemarker-Seed Repository" at "https://dl.bintray.com/ya
 
 lazy val root = (project in file(".")).settings(
     organization := "com.example",
-    scalaVersion := ver("scala"),
+    scalaVersion := v("scala"),
     name := "hello",
     mainClass := Some("com.example.HelloServerMain"),
     libraryDependencies ++= Seq(
-      "greatbit" %% "finatra-freemarker" % ver("finatra"),
-      "ch.qos.logback" % "logback-classic" % ver("logback"),
-      "org.jdbi" % "jdbi" % ver("jdbi"),
-      "com.h2database" % "h2" % ver("h2"),
-      "com.twitter" %% "finatra-http" % ver("finatra") % "test",
-      "com.twitter" %% "inject-server" % ver("finatra") % "test",
-      "com.twitter" %% "inject-app" % ver("finatra") % "test",
-      "com.twitter" %% "inject-core" % ver("finatra") % "test",
-      "com.twitter" %% "inject-modules" % ver("finatra") % "test",
-      "com.google.inject.extensions" % "guice-testlib" % ver("guice") % "test",
-      "com.twitter" %% "finatra-http" % ver("finatra") % "test" classifier "tests",
-      "com.twitter" %% "inject-server" % ver("finatra") % "test" classifier "tests",
-      "com.twitter" %% "inject-app" % ver("finatra") % "test" classifier "tests",
-      "com.twitter" %% "inject-core" % ver("finatra") % "test" classifier "tests",
-      "com.twitter" %% "inject-modules" % ver("finatra") % "test" classifier "tests",
-      "org.scalatest" %% "scalatest" % ver("scalatest") % "test")
+      "greatbit" %% "finatra-freemarker" % v("finatra"),
+      "ch.qos.logback" % "logback-classic" % v("logback"),
+      "org.jdbi" % "jdbi" % v("jdbi"),
+      "com.h2database" % "h2" % v("h2"),
+
+      "com.twitter" %% "finatra-http" % v("finatra") % "test",
+      "com.twitter" %% "finatra-jackson" % v("finatra") % "test",
+      "com.twitter" %% "inject-server" % v("finatra") % "test",
+      "com.twitter" %% "inject-app" % v("finatra") % "test",
+      "com.twitter" %% "inject-core" % v("finatra") % "test",
+      "com.twitter" %% "inject-modules" % v("finatra") % "test",
+      "com.google.inject.extensions" % "guice-testlib" % v("guice") % "test",
+
+      "com.twitter" %% "finatra-http" % v("finatra") % "test" classifier "tests",
+      "com.twitter" %% "finatra-jackson" % v("finatra" % "test" classifier "tests",
+      "com.twitter" %% "inject-server" % v("finatra") % "test" classifier "tests",
+      "com.twitter" %% "inject-app" % v("finatra") % "test" classifier "tests",
+      "com.twitter" %% "inject-core" % v("finatra") % "test" classifier "tests",
+      "com.twitter" %% "inject-modules" % v("finatra") % "test" classifier "tests",
+      
+      "org.mockito" % "mockito-core" % v("mockito") % "test",    
+      "org.scalatest" %% "scalatest" % v("scalatest") % "test")
   )
