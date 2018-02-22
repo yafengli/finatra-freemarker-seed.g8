@@ -2,12 +2,12 @@
 <@layout "This is title!" "_home">
 <div class="row">
     <div class="col-sm-12 alert alert-primary" role="alert">
-        <h1>${name!"Not SET Name!"}</h1>
+        <h1>\${name!"Not SET Name!"}</h1>
     </div>
     <div class="col-sm-12 alert alert-info" role="alert">
         <ul>
             <#list persons as t>
-                <li>${t.name}|${t.age}</li>
+                <li>\${t.name}|\${t.age}</li>
             </#list>
         </ul>
     </div>
