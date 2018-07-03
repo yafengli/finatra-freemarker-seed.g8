@@ -26,12 +26,9 @@ class PingController @Inject() (service: ExampleService) extends Controller {
   get("/cookie") { request: Request =>
     val format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
     println("Come in /cookie:"+format.format(new Date()))
-    val c1 = new Cookie("SESSION_ID", System.currentTimeMillis().toString)
-    c1.maxAge = util.Duration.apply(500, TimeUnit.SECONDS)
-    val c2 = new Cookie("OPEN_ID", System.currentTimeMillis().toString)
-    c2.maxAge = util.Duration.apply(500, TimeUnit.SECONDS)
-    val c3 = new Cookie("USER_ID", System.currentTimeMillis().toString)
-    c3.maxAge = util.Duration.apply(500, TimeUnit.SECONDS)
+    val c1 = new Cookie("SESSION_ID", System.currentTimeMillis().toString, maxAge = Some(util.Duration(500, TimeUnit.SECONDS)))
+    val c2 = new Cookie("OPEN_ID", System.currentTimeMillis().toString, maxAge = Some(util.Duration(500, TimeUnit.SECONDS)))
+    val c3 = new Cookie("USER_ID", System.currentTimeMillis().toString, maxAge = Some(util.Duration(500, TimeUnit.SECONDS)))
     response.ok.plain("Add Cookie OK!").cookie(c1).cookie(c2).cookie(c3)
   }
 
