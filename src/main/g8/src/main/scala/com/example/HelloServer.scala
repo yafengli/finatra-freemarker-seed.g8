@@ -11,7 +11,8 @@ import finatra.freemarker.FreemarkerModule
 object HelloServerMain extends HelloServer
 
 class HelloServer extends HttpServer {
-  override def defaultFinatraHttpPort = ":80"
+  
+  override protected def defaultHttpPort: String = ":80"
 
   override protected def modules: Seq[Module] = Array(FreemarkerModule,H2Module)
 
