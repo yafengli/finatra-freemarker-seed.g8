@@ -1,5 +1,7 @@
 *.class
 
+#vsc
+.metals/
 # Package Files #
 *.jar
 *.war

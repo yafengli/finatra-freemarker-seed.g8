@@ -19,6 +19,5 @@ lazy val root = (project in file(".")).settings(
       "com.twitter" %% "finatra-http" % v("finatra") % "test" classifier "tests",
       //"com.twitter" %% "finatra-jackson" % v("finatra" % "test" classifier "tests",
       
-      "org.mockito" % "mockito-core" % v("mockito") % "test",    
       "org.scalatest" %% "scalatest" % v("scalatest") % "test")
   )
